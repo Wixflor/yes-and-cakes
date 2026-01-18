@@ -27,7 +27,8 @@ const navigation = {
 export function Header({ lang }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const { setTheme, resolvedTheme } = useTheme()
+
   
   useEffect(() => {
     setMounted(true)
@@ -51,7 +52,7 @@ export function Header({ lang }: HeaderProps) {
   return (
     <>
       <header className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between px-4 sm:px-6 lg:px-10">
           <Link href={homePath}>Yes and Cakes</Link>
 
           {/* Desktop Navigation */}
@@ -88,16 +89,19 @@ export function Header({ lang }: HeaderProps) {
                 </span>
               </Link>
               <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="rounded-full p-2 hover:bg-accent/20 transition"
-                aria-label="Toggle theme"
-              >
-                {theme === "dark" ? (
-                  <Sun className="h-5 w-5" />
-                ) : (
-                  <Moon className="h-5 w-5" />
-                )}
-              </button>
+                  onClick={() =>
+                    setTheme(resolvedTheme === "dark" ? "light" : "dark")
+                  }
+                  className="rounded-md p-2 hover:bg-muted transition"
+                  aria-label="Toggle theme"
+                >
+                  {resolvedTheme === "dark" ? (
+                    <Sun className="h-5 w-5" />
+                  ) : ( 
+                    <Moon className="h-5 w-5" />
+                  )}
+                </button>
+
 
 
           </nav>
@@ -156,16 +160,19 @@ export function Header({ lang }: HeaderProps) {
                 </span>
               </Link>
               <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                onClick={() =>
+                  setTheme(resolvedTheme === "dark" ? "light" : "dark")
+                }
                 className="rounded-md p-2 hover:bg-muted transition"
                 aria-label="Toggle theme"
               >
-                {theme === "dark" ? (
+                {resolvedTheme === "dark" ? (
                   <Sun className="h-5 w-5" />
                 ) : (
                   <Moon className="h-5 w-5" />
                 )}
               </button>
+
 
 
           </nav>
