@@ -15,13 +15,12 @@ export function Philosophy({ lang }: { lang: "es" | "en" }) {
   const content = philosophyContent[lang]
 
   return (
-    <section
-      id="philosophy"
-      className="bg-muted/30 py-28"
-    >
-      <div className="mx-auto max-w-2xl text-center space-y-6 px-4">
+    <section id="philosophy" className="bg-muted/30 py-28">
+      <div className="container">
+      <div className="mx-auto max-w-2xl text-center space-y-6">
         <h2 className="text-balance">{content.title}</h2>
         <p>{content.text}</p>
+      </div>
       </div>
     </section>
   )

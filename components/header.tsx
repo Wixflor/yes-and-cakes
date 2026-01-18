@@ -52,7 +52,7 @@ export function Header({ lang }: HeaderProps) {
   return (
     <>
       <header className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="flex h-16 items-center justify-between px-4 sm:px-6 lg:px-10">
+        <div className="container flex h-16 items-center justify-between">
           <Link href={homePath}>Yes and Cakes</Link>
 
           {/* Desktop Navigation */}
