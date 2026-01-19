@@ -27,8 +27,11 @@ const navigation = {
 export function Header({ lang }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
-  const { setTheme, resolvedTheme } = useTheme()
+  const { theme, setTheme } = useTheme()
 
+const toggleTheme = () => {
+  setTheme(theme === "dark" ? "light" : "dark")
+}
   
   useEffect(() => {
     setMounted(true)
@@ -46,6 +49,7 @@ export function Header({ lang }: HeaderProps) {
   const otherLangPath = lang === "es" ? "/en" : "/"
   const homePath = lang === "es" ? "/" : "/en"
  
+
 
 
 
@@ -88,18 +92,22 @@ export function Header({ lang }: HeaderProps) {
                   EN
                 </span>
               </Link>
-              <button
+             {/* <button 
                   onClick={() =>
                     setTheme(resolvedTheme === "dark" ? "light" : "dark")
                   }
                   className="rounded-md p-2 hover:bg-muted transition"
                   aria-label="Toggle theme"
-                >
+                > 
                   {resolvedTheme === "dark" ? (
                     <Sun className="h-5 w-5" />
                   ) : ( 
                     <Moon className="h-5 w-5" />
                   )}
+                </button> */}
+
+                <button onClick={toggleTheme} aria-label="Toggle theme">
+                  {theme === "dark" ? <Sun /> : <Moon />}
                 </button>
 
 
@@ -159,7 +167,7 @@ export function Header({ lang }: HeaderProps) {
                   EN
                 </span>
               </Link>
-              <button
+            {/* <button
                 onClick={() =>
                   setTheme(resolvedTheme === "dark" ? "light" : "dark")
                 }
@@ -171,8 +179,11 @@ export function Header({ lang }: HeaderProps) {
                 ) : (
                   <Moon className="h-5 w-5" />
                 )}
-              </button>
+              </button>} */}
 
+              <button onClick={toggleTheme} aria-label="Toggle theme">
+                {theme === "dark" ? <Sun /> : <Moon />}
+              </button>
 
 
           </nav>
