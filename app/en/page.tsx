@@ -34,12 +34,12 @@ export default function HomePageEN() {
   return (
     <div className="min-h-screen">
        <>
-      <Header lang="en" />
+    {/*  <Header lang="en" />
       <Hero lang="en" />
       {/* same sections */}
       </>
-
-       
+      {/*  <Header lang="en" />
+      <Hero lang="en" /> */}
 
       {/* Catalog Section */}
       
