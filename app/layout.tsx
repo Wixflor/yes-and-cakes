@@ -22,16 +22,16 @@ export default function RootLayout({
 }) {
   return (
    <html lang="es" suppressHydrationWarning>
-      <body className="w-full overflow-x-hidden">
+      <body className="min-h-screen overflow-x-hidden antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-           <main className="w-full overflow-x-hidden">
+           
             {children}
-           </main>
+           
         </ThemeProvider>
       </body>
     </html>

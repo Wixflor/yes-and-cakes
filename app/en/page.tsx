@@ -32,14 +32,10 @@ export const metadata: Metadata = {
 
 export default function HomePageEN() {
   return (
-    <div className="min-h-screen">
-       <>
-    {/*  <Header lang="en" />
+    <main className="min-h-screen overflow-x-hidden">
+      {/* <Header lang="en" /> */}
       <Hero lang="en" />
-      {/* same sections */}
-      </>
-      {/*  <Header lang="en" />
-      <Hero lang="en" /> */}
+      
 
       {/* Catalog Section */}
       
@@ -61,6 +57,6 @@ export default function HomePageEN() {
       {/* Footer */}
       <Footer text={`© ${new Date().getFullYear()} Yes and Cakes. Madrid, Spain.`} />
 
-    </div>
+    </main>
   )
 }
