@@ -5,9 +5,9 @@ export function Hero({ lang }: { lang: "es" | "en" }) {
   const t = content[lang].hero
 
   return (
-    <section className="py-28 lg:py-40">
-      <div className="container">
-        <div className="mx-auto max-w-2xl text-center space-y-8">
+    <section className=" w-full flex justify-center py-28 lg:py-40">
+      
+        <div className="mx-auto max-w-2xl px-4 text-center space-y-8">
           <h1 className="text-balance">{t.title}</h1>
 
           <p className="max-w-xl mx-auto">
@@ -18,7 +18,7 @@ export function Hero({ lang }: { lang: "es" | "en" }) {
             <Button size="lg">{t.cta}</Button>
           </div>
         </div>
-      </div>
+      
     </section>
   )
 }

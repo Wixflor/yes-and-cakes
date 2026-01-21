@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
    <html lang="es" suppressHydrationWarning>
-      <body className="min-h-screen overflow-x-hidden antialiased">
+      <body className="w-full min-h-screen overflow-x-hidden">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
